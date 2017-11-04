@@ -3,8 +3,8 @@
 <?php 
 if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; }
  ?> 
-<form method="post" action="<?php echo site_url('subject_controller/update_subject/'.$cid);?>">
-<a href="<?php echo site_url('subject_controller');?>"  class="btn btn-danger">Back</a>
+<form method="post" action="<?php echo site_url('subject_main/update_subject/'.$cid);?>">
+<a href="<?php echo site_url('subject_main');?>"  class="btn btn-danger">Back</a>
 <div class="row" style="margin-top:10px;">
                 <div class="col-lg-12">
                     <div class="panel panel-default">

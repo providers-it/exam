@@ -3,7 +3,7 @@
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Subject_controller extends CI_Controller {
+class Subject_main extends CI_Controller {
 
  function __construct()
  {
@@ -35,7 +35,7 @@ return;
 
 function remove_subject($cid){
 	$this->subject->remove_subject($cid);
-	redirect('subject_controller', 'refresh');
+	redirect('subject_main', 'refresh');
 }
 
 // add new subject form
