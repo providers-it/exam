@@ -88,8 +88,9 @@ function add_question(){
 			'q_type' => $this->input->post('qus_type'),
 			'did' => $this->input->post('did'),
 			'question' => $this->input->post('question'),
-			'description' => $this->input->post('description'),
-			'qshuffle' => $this->input->post('shuffle')
+			'qshuffle' => $this->input->post('shuffle'),
+			'description' => $this->input->post('description')
+			
 			);
 			
  			
@@ -153,18 +154,21 @@ $description= str_replace('"','&#34;',$singlequestion['2']);
 $description= str_replace("'","&#39;",$description);
 $description= str_replace("\n","<br>",$description);
 $ques_type= $singlequestion['0'];
+$q_shuffle = $singlequestion['4'];
 
 	$insert_data = array(
 	'cid' => $questioncid,
 	'did' => $questiondid,
 	'question' =>$question,
 	'description' => $description,
+	'qshuffle' => $q_shuffle,
 	'q_type' => $ques_type
+	
 	);
 	
 	if($this->db->insert('qbank',$insert_data)){
 		$qid=$this->db->insert_id();
-		$optionkeycounter = 4;
+		$optionkeycounter = 5;
 		if($ques_type=="0" || $ques_type==""){
 		for($i=1;$i<=10;$i++){
 			if($singlequestion[$optionkeycounter] != ""){
