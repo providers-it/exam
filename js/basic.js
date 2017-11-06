@@ -1,5 +1,5 @@
 
-var base_url = 'http://localhost/exam/'; 
+var base_url = 'http://home.dev/exam/'; 
  
 var comnt_id="0"; 
 $(document).ready(function(){

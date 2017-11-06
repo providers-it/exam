@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/exam/'; 
+$config['base_url']	= 'http://home.dev/exam/'; 
 
 /*
 | number of records per page
