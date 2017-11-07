@@ -54,7 +54,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 								?>
 								<tr>
 								<td colspan="6">
-								No record foud!
+								No records found!
 								</td>
 								</tr>
 								<?php

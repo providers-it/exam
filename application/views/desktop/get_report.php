@@ -5,7 +5,7 @@ if($report==false){
 ?>
 <tr>
 <td colspan="8">
-No record foud!
+No records found!
 </td>
 </tr>
 <?php

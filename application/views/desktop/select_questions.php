@@ -48,7 +48,7 @@ if($result==false){
 ?>
 <tr>
 <td colspan="5">
-No record foud!
+No records found!
 </td>
 </tr>
 <?php

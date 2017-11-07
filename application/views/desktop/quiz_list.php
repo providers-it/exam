@@ -57,7 +57,7 @@ if($logged_in['su']=="1"){
 								?>
 								<tr>
 								<td colspan="6">
-								No record foud!
+								No records found!
 								</td>
 								</tr>
 								<?php
