@@ -23,7 +23,7 @@ document.getElementById(che).checked=false;
 
 
 function sortby(limi,cid){
-window.location="<?php echo site_url();?>/qbank/index/0/"+cid;
+window.location="<?php echo site_url();?>qbank/index/0/"+cid;
 }
 </script>
 
