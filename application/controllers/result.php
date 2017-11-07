@@ -22,7 +22,7 @@ return;
 }		
 
    $data['result'] = $this->result_model->result_list_all($limit);
-	$data['group_list'] = $this->result_model->group_list();
+	$data['batch_list'] = $this->result_model->batch_list();
 	$data['quiz_list'] = $this->result_model->quiz_list();
 	$data['title']="Result";
    $data['limit']=$limit;
@@ -52,12 +52,12 @@ if($file_format=="pdf"){
 	}else if($file_format=="csv"){
 			$this->load->helper('download');
 		
-		$csvdata="Username,First name,Last name, Email, Group, Quiz Name, Score, Percentage, Result \r\n";
+		$csvdata="Username,First name,Last name, Email, Batch, Quiz Name, Score, Percentage, Result \r\n";
 		foreach($data['report'] as $key=>$val){
 if($val->q_result =="1"){
-	$csvdata.=$val  ->username  .",".$val  ->first_name  .",".$val  ->last_name  .",".$val  ->email  .",".$val  ->group_name  .",".$val  ->quiz_name  .",".$val  ->score  .",".$val  ->percentage  ."%,Pass\r\n";
+	$csvdata.=$val  ->username  .",".$val  ->first_name  .",".$val  ->last_name  .",".$val  ->email  .",".$val  ->batch_name  .",".$val  ->quiz_name  .",".$val  ->score  .",".$val  ->percentage  ."%,Pass\r\n";
 		}else{
-			$csvdata.=$val  ->username  .",".$val  ->first_name  .",".$val  ->last_name  .",".$val  ->email  .",".$val  ->group_name  .",".$val  ->quiz_name  .",".$val  ->score  .",".$val  ->percentage  ."%,Fail\r\n";
+			$csvdata.=$val  ->username  .",".$val  ->first_name  .",".$val  ->last_name  .",".$val  ->email  .",".$val  ->batch_name  .",".$val  ->quiz_name  .",".$val  ->score  .",".$val  ->percentage  ."%,Fail\r\n";
 	
 		}
 		}

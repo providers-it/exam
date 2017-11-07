@@ -26,12 +26,12 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 
                                          </div>
 	                                      <div class="form-group">
-                                            <label>Assign to Groups:</label><br>
+                                            <label>Assign to Batches:</label><br>
 		                                       	<?php
-												$group_counter = 1; 
-												foreach($groups as $key => $group){ ?>
-													<?php echo $group['group_name']; ?>  &nbsp;<input type="checkbox" name="assigned_groups[]" value="<?php echo $group['gid']; ?>"  <?php if(in_array($group['gid'],$assigned_gids)){ echo "checked";} ?> > &nbsp; &nbsp;&nbsp;
-												<?php if($group_counter%5 == 0){ echo "</br>"; } $group_counter++; }  ?>
+												$batch_counter = 1; 
+												foreach($batches as $key => $batch){ ?>
+													<?php echo $batch['batch_name']; ?>  &nbsp;<input type="checkbox" name="assigned_batches[]" value="<?php echo $batch['gid']; ?>"  <?php if(in_array($batch['gid'],$assigned_gids)){ echo "checked";} ?> > &nbsp; &nbsp;&nbsp;
+												<?php if($batch_counter%5 == 0){ echo "</br>"; } $batch_counter++; }  ?>
 											
 													 </div>
 													 

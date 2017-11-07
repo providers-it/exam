@@ -84,10 +84,10 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                                             <label>Assign to Batches</label>
 											<div class="form-group" id="checkBox">		                                   
 										   <?php
-													$group_counter = 1; 
-													foreach($groups as $key => $group){ ?>
-														<?php echo $group['group_name']; ?><input type="checkbox" name="assigned_groups[]" value="<?php echo $group['gid']; ?>" <?php if(in_array($group['gid'],$assigned_gids)){ echo "checked";} ?> > &nbsp;&nbsp;
-													<?php if($group_counter%5 == 0){ echo "</br>"; } $group_counter++; }  ?>
+													$batch_counter = 1; 
+													foreach($batches as $key => $batch){ ?>
+														<?php echo $batch['batch_name']; ?><input type="checkbox" name="assigned_batches[]" value="<?php echo $batch['gid']; ?>" <?php if(in_array($batch['gid'],$assigned_gids)){ echo "checked";} ?> > &nbsp;&nbsp;
+													<?php if($batch_counter%5 == 0){ echo "</br>"; } $batch_counter++; }  ?>
                                          </div></div>
 
 										 
@@ -511,7 +511,7 @@ $.ajax({
   <?php $switch = 1 ?>
   var subjectValue = $("#subjectName").val();
   var centerValue = $("#centerName").val();
-  var url = "<?php echo site_url('user_data/selected_group');?>";
+  var url = "<?php echo site_url('user_data/selected_batch');?>";
   var url = url+"/"+subjectValue+"/"+centerValue;
   console.log(url);
 $.ajax({
@@ -548,7 +548,7 @@ $('#subjectName').on('change', function() {
   console.log(1);
   var subjectValue = $("#subjectName").val();
   var centerValue = $("#centerName").val();
-  var url = "<?php echo site_url('user_data/selected_group');?>";
+  var url = "<?php echo site_url('user_data/selected_batch');?>";
   var url = url+"/"+subjectValue+"/"+centerValue;
   console.log(url);
 /*
@@ -583,7 +583,8 @@ $.ajax({
 		//options = "<option> Please select Batch </option>";  
        for(var i=0,j=1;i<data.length; i++,j++)
        {
-        options += "  <input type='checkbox' name='assigned_groups[]' value='"+data[i].id+"'>"+data[i].name;
+        options += "  <input type='checkbox' name='assigned_batches[]' value='"+data[i].id+"'>"+data[i].name;
+        options += "  <input type='checkbox' name='assigned_batches[]' value='"+data[i].id+"'>"+data[i].name;
 		if (j%5 == 0)
 		{
 			options +=" </br> ";

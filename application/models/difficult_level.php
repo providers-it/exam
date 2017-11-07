@@ -18,7 +18,7 @@ Class Difficult_level extends CI_Model
    }
  }
 
-// get all available level to show a group list in admin side
+// get all available level to show a batch list in admin side
 	function level_list($limit)
  {
  	$institute_id = $this->session->userdata('institute_id');

@@ -19,7 +19,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                                 <table class="table table-hover">
                                     <thead>
 									
-	<tr><th>Id</th><th>Group</th><th>Action</th></tr><thead><tbody>
+	<tr><th>Id</th><th>Batch</th><th>Action</th></tr><thead><tbody>
 <?php
 if($result==false){
 ?>

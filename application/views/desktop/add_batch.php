@@ -3,8 +3,8 @@
 <?php
 if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; }
  ?>
-<form method="post" action="<?php echo site_url('group/insert_group/');?>">
-<a href="<?php echo site_url('group');?>"   class="btn btn-danger">Back</a>
+<form method="post" action="<?php echo site_url('batch/insert_batch/');?>">
+<a href="<?php echo site_url('batch');?>"   class="btn btn-danger">Back</a>
 <div class="row" style="margin-top:10px;">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -49,7 +49,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 
                                         <div class="form-group">
                                             <label>Batch Name</label>
-		                                         <input type='text'  class="form-control"  name='groupname' >
+		                                         <input type='text'  class="form-control"  name='batchname' >
 
                                          </div>
 
@@ -109,7 +109,7 @@ $('#subjectName').on('change', function() {
   console.log(1);
   var subjectValue = $("#subjectName").val();
   var centerValue = $("#centerName").val();
-  var url = "<?php echo site_url('user_data/selected_group');?>";
+  var url = "<?php echo site_url('user_data/selected_batch');?>";
   var url = url+"/"+subjectValue+"/"+centerValue;
   console.log(url);
 $.ajax({

@@ -72,7 +72,7 @@ Class quiz_model extends CI_Model
 			if($this->db->insert('quiz',$insert_data)){
 			$quid=$this->db->insert_id();
 			$cid=$this->input->post('subject');
-			foreach($_POST['assigned_groups'] as $value){
+			foreach($_POST['assigned_batches'] as $value){
 			$insert_data = array(
 			'quid'	=>	$quid,
 			'gid'	=>	$value,
@@ -205,7 +205,7 @@ $this->db->insert('essay_qsn', $insert_data);
  			$this->db->where('institute_id',$institute_id);
 			$this->db->where('quid', $quid);
 			$this->db->delete('quiz_group');
-			foreach($_POST['assigned_groups'] as $value){
+			foreach($_POST['assigned_batches'] as $value){
 			$insert_data = array(
 			'quid'	=>	$quid,
 			'gid'	=>	$value,
@@ -239,7 +239,7 @@ $this->db->insert('essay_qsn', $insert_data);
  
  
   
-  function assigned_groups($id)
+  function assigned_batches($id)
  {
  $institute_id = $this->session->userdata('institute_id');
 
@@ -524,13 +524,13 @@ $kk=$k+1;
  	$gid=$userdata['gid'];
 	$query = $this -> db -> query("select users.* from users where id='$uid' and institute_id = '$institute_id'");
 	$row2=$query->row_array();
-	// if quiz assign to user group
+	// if quiz assign to user batch
 	$query = $this -> db -> query("select quiz_group.* from quiz_group where gid='$gid' and quid='$quid' and institute_id = '$institute_id' ");
 	$assigngid=$query -> num_rows();
 	$logged_in=$this->session->userdata('logged_in');
 	if($logged_in['su']!="1"){
 	if($assigngid!="1"){
-	return "This quiz is not assigned to your group";
+	return "This quiz is not assigned to your batch";
 	}
 	}
 	// check quiz start time

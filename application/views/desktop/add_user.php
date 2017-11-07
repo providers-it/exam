@@ -77,9 +77,9 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
              			 														
 										<div class="form-group">
                                             <label>Batch </label>
-                                          	<select class="form-control" id="batchName" name="user_group">
-											<?php foreach($selected_group as $key => $group){ ?>
-											<option value="<?php echo $group['gid']; ?>"><?php echo $group['group_name']; ?></option>
+                                          	<select class="form-control" id="batchName" name="user_batch">
+											<?php foreach($selected_batch as $key => $batch){ ?>
+											<option value="<?php echo $batch['gid']; ?>"><?php echo $batch['batch_name']; ?></option>
 											<?php } ?>
 											</select>
 										 </div>
@@ -148,7 +148,7 @@ $('#subjectName').on('change', function() {
  // console.log(1);
   var subjectValue = $("#subjectName").val();
   var centerValue = $("#centerName").val();
-  var url = "<?php echo site_url('user_data/selected_group');?>";
+  var url = "<?php echo site_url('user_data/selected_batch');?>";
   var url = url+"/"+subjectValue+"/"+centerValue;
   //console.log(url);
 $.ajax({

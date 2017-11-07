@@ -41,7 +41,7 @@ class Liveclass_model extends CI_Model {
 			);
 			$this->db->insert('live_class',$userdata);
 			$class_id=$this->db->insert_id();
-			foreach($this->input->post('assigned_groups') as $key => $gid){
+			foreach($this->input->post('assigned_batches') as $key => $gid){
 			$userdata=array(
 			'class_id'=>$class_id,
 			'gid'=>$gid
@@ -65,7 +65,7 @@ class Liveclass_model extends CI_Model {
 			$this->db->delete('class_gid');
 			
 			
-			foreach($this->input->post('assigned_groups') as $key => $gid){
+			foreach($this->input->post('assigned_batches') as $key => $gid){
 			$userdata=array(
 			'class_id'=>$class_id,
 			'gid'=>$gid
@@ -103,7 +103,7 @@ class Liveclass_model extends CI_Model {
   }
   
   
-  public function assigned_groups($class_id){
+  public function assigned_batches($class_id){
 					$this->db->where("class_id",$class_id);
 					$query=$this->db->get("class_gid");
    if($query -> num_rows() >= 1)

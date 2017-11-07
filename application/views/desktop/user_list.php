@@ -71,7 +71,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 								<td  data-th="Institute ID"><?php echo $row->institute_id;?></td>
 								<td  data-th="Institute Name"><?php echo $row->organization_name;?></td>
 								<td  data-th="Institute Name"><?php echo $row->subject_name;?></td>
-								<td  data-th="Institute Name"><?php echo $row->group_name;?></td>
+								<td  data-th="Institute Name"><?php echo $row->batch_name;?></td>
 								<td  data-th="Action"><a href="javascript: if(confirm('Do you really want to remove this user?')){ window.location='<?php echo site_url('user_data/remove_user/'.$row->id );?>'; }" class="btn btn-danger btn-xs">Remove</a> 
 								<a href="<?php echo site_url('user_data/edit_user/'.$row->id );?>" class="btn btn-info btn-xs">Edit</a>
 								<a href="<?php echo site_url('user_data/login_user_by_admin/'.$row->id );?>" class="btn btn-warning btn-xs">Login</a></td>	

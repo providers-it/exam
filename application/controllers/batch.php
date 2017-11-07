@@ -1,15 +1,15 @@
-<!--       Group.PHP              -->
+<!--       Batch.PHP              -->
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Group extends CI_Controller {
+class Batch extends CI_Controller {
 //echo "Balaji";
  function __construct()
  {
    parent::__construct();
    $this->load->helper(array('form', 'url'));
    $this->load->library('form_validation');
-   $this->load->model('group_model','',TRUE);
+   $this->load->model('batch_model','',TRUE);
    $this->load->model('centers_model','',TRUE);
    $this->load->model('subject','',TRUE);
    if(!$this->session->userdata('logged_in'))
@@ -25,42 +25,42 @@ if($logged_in['su']!="1"){
 exit('Permission denied');
 return;
 }		
-   $data['result'] = $this->group_model->group_list($limit);
-	$data['title']="Group list";
+   $data['result'] = $this->batch_model->batch_list($limit);
+	$data['title']="Batch list";
    $data['limit']=$limit;
    $this->load->view($this->session->userdata('web_view').'/header',$data);
-   $this->load->view($this->session->userdata('web_view').'/group_list',$data);
+   $this->load->view($this->session->userdata('web_view').'/batch_list',$data);
   	$this->load->view($this->session->userdata('web_view').'/footer',$data);
  }
 
 
-function remove_group($gid){
+function remove_batch($gid){
 $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){
 exit('Permission denied');
 return;
 }		
-	$this->group_model->remove_group($gid);
-	redirect('group', 'refresh');
+	$this->batch_model->remove_batch($gid);
+	redirect('batch', 'refresh');
 }
 
-// add new group form
+// add new batch form
 function add_new(){
 $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){
 exit('Permission denied');
 return;
 }		
-	$data['title']="Add Group";
+	$data['title']="Add Batch";
 	$data['allcenters'] = $this->centers_model->get_allcenters();
 	$data['allsubject'] = $this->subject->get_allsubject();
 	$this->load->view($this->session->userdata('web_view').'/header',$data);
-	$this->load->view($this->session->userdata('web_view').'/add_group',$data);
+	$this->load->view($this->session->userdata('web_view').'/add_batch',$data);
 	$this->load->view($this->session->userdata('web_view').'/footer',$data);
 	}
 
-// insert group into database
-function insert_group(){
+// insert batch into database
+function insert_batch(){
 $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){
 exit('Permission denied');
@@ -68,53 +68,53 @@ return;
 }		
 	//echo "<pre>"; print_r($_POST);
 	// form validation rules
-	$this->form_validation->set_rules('groupname', 'Group Name', 'required');
+	$this->form_validation->set_rules('batchname', 'Batch Name', 'required');
 	if ($this->form_validation->run() == FALSE)
 		{
 			$this->add_new();
 		}
 		else
 		{
-		$data['title']="Add Group";
-		$data['resultstatus'] = $this->group_model->insert_group();
+		$data['title']="Add Batch";
+		$data['resultstatus'] = $this->batch_model->insert_batch();
 		$this->load->view($this->session->userdata('web_view').'/header',$data);
-		$this->load->view($this->session->userdata('web_view').'/add_group',$data);
+		$this->load->view($this->session->userdata('web_view').'/add_batch',$data);
 		$this->load->view($this->session->userdata('web_view').'/footer',$data);
 		}
 	}
 	
-	// edit the group form
-	public function edit_group($gid,$resultstatus=''){
+	// edit the batch form
+	public function edit_batch($gid,$resultstatus=''){
 $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){
 exit('Permission denied');
 return;
 }		
-		$data['title']="Edit Group";
-		$data['group'] = $this->group_model->get_group($gid);
+		$data['title']="Edit Batch";
+		$data['batch'] = $this->batch_model->get_batch($gid);
 		$data['gid'] = $gid;
 		$data['resultstatus'] = $resultstatus;
 		$this->load->view($this->session->userdata('web_view').'/header',$data);
-		$this->load->view($this->session->userdata('web_view').'/edit_group',$data);
+		$this->load->view($this->session->userdata('web_view').'/edit_batch',$data);
 		$this->load->view($this->session->userdata('web_view').'/footer',$data);
 		}
 		
 		
-	// update group in database
-	function update_group($gid){
+	// update batch in database
+	function update_batch($gid){
 $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){
 exit('Permission denied');
 return;
 }		
 		// form validations
-		$this->form_validation->set_rules('groupname', 'Group Name', 'required');
+		$this->form_validation->set_rules('batchname', 'Batch Name', 'required');
 		if ($this->form_validation->run() == FALSE){
-			$this->edit_group($gid);
+			$this->edit_batch($gid);
 			}
 		else{
-			$resultstatus = $this->group_model->update_group($gid);
-			$this->edit_group($gid,$resultstatus);
+			$resultstatus = $this->batch_model->update_batch($gid);
+			$this->edit_batch($gid,$resultstatus);
 			}
 		}	
 }

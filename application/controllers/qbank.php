@@ -200,8 +200,8 @@ return;
 $data['q_t']=$q_t; 
   $this->load->model('subject','',TRUE);
   	$data['subject'] = $this->subject->subject_dropdown();
-	$this->load->model('group_model','',TRUE); //editing
-  	$data['group'] = $this->group_model->group_dropdown();
+	$this->load->model('batch_model','',TRUE); //editing
+  	$data['batch'] = $this->batch_model->batch_dropdown();
 	$this->load->model('difficult_level','',TRUE);
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
 	if($this->input->post('cid')){

@@ -67,22 +67,22 @@ function verify_code($vcode)
    }
  }
 
- function user_by_group(){
- 	 $user_group=array();
-	 $user_group[]=array('Group Name','Registered users');
-	 $query=$this->db->query("select * from user_group ");
+ function user_by_batch(){
+ 	 $user_batch=array();
+	 $user_batch[]=array('Batch Name','Registered users');
+	 $query=$this->db->query("select * from user_batch ");
 	 $result=$query->result_array();
 	 
 	 foreach($result as $value){
 	 $gid=$value['gid'];
-	 $group_name=$value['group_name'];
+	 $batch_name=$value['batch_name'];
 	 $query=$this->db->query("select * from users where gid='$gid' ");
 	 $nou=$query -> num_rows();
-	 $user_group[]=array($group_name,intval($nou));
+	 $user_batch[]=array($batch_name,intval($nou));
 	 
  	}
 	
- 	return $user_group;
+ 	return $user_batch;
  }
 
 
@@ -92,7 +92,7 @@ function verify_code($vcode)
    $this -> db -> from('users');
     $this -> db -> join('institute_data', 'users.institute_id = institute_data.su_institute_id','INNER'); 
 	$this -> db -> join('question_subject', 'users.cid = question_subject.cid','INNER');
-	$this -> db -> join('user_group', 'users.gid = user_group.gid','INNER');
+	$this -> db -> join('user_batch', 'users.gid = user_batch.gid','INNER');
    if($this->input->post('search_type')){
    $search_type=$this->input->post('search_type');
    $search=$this->input->post('search');
@@ -190,7 +190,7 @@ function institute_list($limit)
 			//'credit' => $this->input->post('user_credit'),
 			'credit' => '0',
 			'email' => $this->input->post('user_email'),
-			'gid' => $this->input->post('user_group'),
+			'gid' => $this->input->post('user_batch'),
 			//'su' => $this->input->post('account_type'),
 			'su' => '0',
 			'veri_code' => '0',
@@ -305,7 +305,7 @@ function register_user(){
 			'last_name' => $this->input->post('last_name'),
 			'credit' => '0',
 			'email' => $this->input->post('user_email'),
-			'gid' => $this->input->post('user_group'),
+			'gid' => $this->input->post('user_batch'),
 			'su' => '0',
 			'veri_code' => $veri_code,
 			'institute_id' => '1'
@@ -326,7 +326,7 @@ function register_user(){
 			
 	// get particular user detail		
 	function get_user($user_id){
-		//$this->db->join("user_group",'user_group.gid = users.gid');
+		//$this->db->join("user_batch",'user_batch.gid = users.gid');
 		//$query = $this->db->get_where('users',array('id' => $user_id, 'users.institute_id' => $institute_id));
 		//$query = $this->db->get_where('users',$user_id);
 		
@@ -345,7 +345,7 @@ function register_user(){
  		$user_email = $_POST['user_email'];
  		$user_password = $_POST['user_password'];
  		$user_credit = $_POST['user_credit'];
- 		$user_group = $_POST['user_group'];
+ 		$user_batch = $_POST['user_batch'];
  		$account_type = $_POST['account_type'];
  		$logged_in=$this->session->userdata('logged_in');
 		// if loged in user admin
@@ -357,7 +357,7 @@ function register_user(){
 	 		'first_name' => $first_name,
 	 		'last_name' => $last_name,
 	 		'email' => $user_email,
-	 		'gid' => $user_group,
+	 		'gid' => $user_batch,
 	 		'su' => $account_type,
 	 		'password' => md5($user_password)
 			//'password'=>password_hash($user_password,PASSWORD_BCRYPT)
@@ -369,7 +369,7 @@ function register_user(){
 	 		'first_name' => $first_name,
 	 		'last_name' => $last_name,
 	 		'email' => $user_email,
-	 		'gid' => $user_group,
+	 		'gid' => $user_batch,
 	 		'su' => $account_type
 	 		);
 	 		}

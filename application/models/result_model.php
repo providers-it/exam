@@ -106,7 +106,7 @@ $res=array();
  if($condi!=""){
  $condi="where ".$condi;
  }
-  $query = $this -> db -> query("SELECT * FROM  `quiz_result` JOIN users ON quiz_result.uid = users.id JOIN quiz ON quiz_result.quid = quiz.quid JOIN user_group ON user_group.gid = users.gid $condi and quiz_result.institute_id = '$institute_id' order by quiz_result.rid desc ");
+  $query = $this -> db -> query("SELECT * FROM  `quiz_result` JOIN users ON quiz_result.uid = users.id JOIN quiz ON quiz_result.quid = quiz.quid JOIN user_batch ON user_batch.gid = users.gid $condi and quiz_result.institute_id = '$institute_id' order by quiz_result.rid desc ");
    if($query -> num_rows() >= 1)
    {
      return $query->result();
@@ -156,12 +156,12 @@ $res=array();
  }
  
  
- 	// get all available groups to show a group list in admin side
-	function group_list()
+ 	// get all available batches to show a batch list in admin side
+	function batch_list()
  {
  $institute_id =$this->session->userdata('institute_id');
-   $this -> db -> select('gid, group_name');
-   $this -> db -> from('user_group');
+   $this -> db -> select('gid, batch_name');
+   $this -> db -> from('user_batch');
    $this->db->where('institute_id',$institute_id);
    $this->db->order_by("gid", "desc"); 
    $query = $this -> db -> get();

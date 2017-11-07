@@ -74,8 +74,8 @@ $this->session->set_userdata('institute_id', $institute_id);
 	 $data['organization_name'] = $result['organization_name'];
     $data['contact_info'] = $result['contact_info'];
    
-  $this->load->model('group_model','',TRUE);
-   $data['allgroups'] = $this->group_model->get_allgroups();
+  $this->load->model('batch_model','',TRUE);
+   $data['allbatches'] = $this->batch_model->get_allbatches();
    $this->load->helper(array('form'));
    $data['title']="Register new account";
    $this->load->view($this->session->userdata('web_view').'/header',$data);

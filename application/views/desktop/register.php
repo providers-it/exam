@@ -67,10 +67,10 @@ if($this->session->flashdata('result')){ $result_r=$this->session->flashdata('re
                                <input class="form-control" name="confirm_password"  type="password" autofocus  AutoComplete=off >
                                 </div>
                                 <div class="form-group">
-								<label>Group</label>
+								<label>Batch</label>
                                 <select name="user_group" class="form-control">
-					<?php foreach($allgroups as $key => $group){ ?>
-						<option value="<?php echo $group['gid']; ?>"><?php echo $group['group_name']; ?></option>
+					<?php foreach($allbatches as $key => $batch){ ?>
+						<option value="<?php echo $batch['gid']; ?>"><?php echo $batch['batch_name']; ?></option>
 					<?php } ?>
 				</select>
 				

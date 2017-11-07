@@ -43,12 +43,12 @@ class Liveclass extends CI_Controller {
 		exit('Permission denied!');
 		}		
 
-		    $this->load->model('group_model','',TRUE);
+		    $this->load->model('batch_model','',TRUE);
 			if($this->input->post('submit_class')){
 			 $data['result'] = $this->liveclass_model->insert_classroom();
 			 redirect('liveclass/edit_class/'.$data['result']);
 			}
-			$data['groups'] = $this->group_model->get_allgroups();
+			$data['batches'] = $this->batch_model->get_allbatches();
 	
 			$data['title']="Initiate new class";
 		   $this->load->view($this->session->userdata('web_view').'/header',$data);
@@ -64,15 +64,15 @@ class Liveclass extends CI_Controller {
 		exit('Permission denied!');
 		}		
 
-		    $this->load->model('group_model','',TRUE);
+		    $this->load->model('batch_model','',TRUE);
 			if($this->input->post('submit_class')){
 			 $this->liveclass_model->update_classroom($class_id);
 			 redirect('liveclass/edit_class/'.$class_id);
 			}
 			$data['class_id']=$class_id;
-			$data['groups'] = $this->group_model->get_allgroups($class_id);
+			$data['batches'] = $this->batch_model->get_allbatches($class_id);
 			$data['result'] = $this->liveclass_model->get_class($class_id);
-			$data['assigned_gids'] = $this->liveclass_model->assigned_groups($class_id);
+			$data['assigned_gids'] = $this->liveclass_model->assigned_batches($class_id);
 			$data['title']="Edit class";
 		   $this->load->view($this->session->userdata('web_view').'/header',$data);
 		   $this->load->view($this->session->userdata('web_view').'/edit_class',$data);
@@ -139,8 +139,8 @@ $target_file = $target_dir . basename($_FILES["file"]["name"]);
 	 
 	 function attempt($class_id)
 	 {
-		    $this->load->model('group_model','',TRUE);
-			$data['groups'] = $this->group_model->get_allgroups($class_id);
+		    $this->load->model('batch_model','',TRUE);
+			$data['batches'] = $this->batch_model->get_allbatches($class_id);
 			$data['result'] = $this->liveclass_model->get_class($class_id);
 			$data['class_id']=$class_id;
 			$data['title']=$data['result']['class_name'];
@@ -157,8 +157,8 @@ $target_file = $target_dir . basename($_FILES["file"]["name"]);
 	 
 	 function view($class_id)
 	 {
-		    $this->load->model('group_model','',TRUE);
-			$data['groups'] = $this->group_model->get_allgroups($class_id);
+		    $this->load->model('batch_model','',TRUE);
+			$data['batches'] = $this->batch_model->get_allbatches($class_id);
 			$data['result'] = $this->liveclass_model->get_class($class_id);
 			$data['comments'] = $this->liveclass_model->get_coment($class_id);
 			$data['class_id']=$class_id;

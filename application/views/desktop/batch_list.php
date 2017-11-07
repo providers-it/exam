@@ -1,4 +1,4 @@
-<br><a href="<?php echo site_url('group/add_new');?>" class="btn btn-success">Add new</a>
+<br><a href="<?php echo site_url('batch/add_new');?>" class="btn btn-success">Add new</a>
  
  	<?php 
 $logged_in=$this->session->userdata('logged_in');
@@ -34,11 +34,11 @@ foreach($result as $row){
 ?>
 <tr>
 <td data-th="Id"><?php echo $row->gid; //EDIT HERE ?></td>
-<td data-th="Group"><?php echo $row->group_name;?></td>
-<td data-th="Group"><?php echo $row->subject_name;?></td>
-<td data-th="Group"><?php echo $row->organization_name;?></td>
-<td data-th="Action"><a href="javascript: if(confirm('Do you really want to remove this batch?')){ window.location='<?php echo site_url('group/remove_group/'.$row->gid );?>'; }"  class="btn btn-danger btn-xs">Remove</a> 
-&nbsp;&nbsp;<a href="<?php echo site_url('group/edit_group/'.$row->gid );?>"  class="btn btn-info btn-xs">Edit</a></td>
+<td data-th="Batch"><?php echo $row->batch_name;?></td>
+<td data-th="Batch"><?php echo $row->subject_name;?></td>
+<td data-th="Batch"><?php echo $row->organization_name;?></td>
+<td data-th="Action"><a href="javascript: if(confirm('Do you really want to remove this batch?')){ window.location='<?php echo site_url('batch/remove_batch/'.$row->gid );?>'; }"  class="btn btn-danger btn-xs">Remove</a> 
+&nbsp;&nbsp;<a href="<?php echo site_url('batch/edit_batch/'.$row->gid );?>"  class="btn btn-info btn-xs">Edit</a></td>
 </tr>
 <?php
 }
@@ -66,10 +66,10 @@ foreach($result as $row){
 <?php
 if(($limit-($this->config->item('number_of_rows')))>=0){ $back=$limit-($this->config->item('number_of_rows')); }else{ $back='0'; } ?>
 
-<a href="<?php echo site_url('group/index/'.$back);?>"  class="btn btn-primary">Back</a>
+<a href="<?php echo site_url('batch/index/'.$back);?>"  class="btn btn-primary">Back</a>
 &nbsp;&nbsp;
 <?php
  $next=$limit+($this->config->item('number_of_rows'));  ?>
 
-<a href="<?php echo site_url('group/index/'.$next);?>"  class="btn btn-primary">Next</a>
+<a href="<?php echo site_url('batch/index/'.$next);?>"  class="btn btn-primary">Next</a>
  

@@ -41,7 +41,7 @@ foreach($result as $row){
 ?> 
 <tr>
 <td data-th="Id"><?php echo $row->su_institute_id;?></td>
-<td data-th="Group Name"><?php echo $row->organization_name;?></td>
+<td data-th="Batch Name"><?php echo $row->organization_name;?></td>
 <td data-th="Action"><a href="javascript: if(confirm('Do you really want to remove this center?')){ window.location='<?php echo site_url('centers/remove_center/'.$row->su_institute_id );?>'; }"  class="btn btn-danger btn-xs">Remove</a>  
 &nbsp;&nbsp;
 <?php console_log($row->su_institute_id); ?>

@@ -8,7 +8,7 @@ class User_data extends CI_Controller {
    $this->load->helper(array('form', 'url'));
    $this->load->library('form_validation');
    $this->load->model('user','',TRUE);
-   $this->load->model('group_model','',TRUE);
+   $this->load->model('batch_model','',TRUE);
    $this->load->model('centers_model','',TRUE);
    $this->load->model('subject','',TRUE);
    if(!$this->session->userdata('logged_in'))
@@ -108,19 +108,19 @@ function selected_subject($selectedValue='')
 
 }
 
-function selected_group($subjectValue='',$centerValue='')
+function selected_batch($subjectValue='',$centerValue='')
 {
     if($subjectValue && $centerValue)
     {
         
-        $data['selected_group'] = $this->group_model->get_selectedGroup($subjectValue,$centerValue);
+        $data['selected_batch'] = $this->batch_model->get_selectedBatch($subjectValue,$centerValue);
   		
-		$array = json_decode(json_encode($data['selected_group']),true);
+		$array = json_decode(json_encode($data['selected_batch']),true);
         
 		foreach ($array as $value) {
 			$result[] = array(
 			'id' => $value['gid'],
-			'name' => $value['group_name']
+			'name' => $value['batch_name']
 			);
  		}
          
@@ -138,20 +138,20 @@ function selected_group($subjectValue='',$centerValue='')
 }
 function add_new(){
 
-
+    $this->load->model('batch_model','',TRUE);
    $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){
 exit('Permission denied');
 return; 
 }      	
 	$data['title']="Add User";
-	//get the list of the groups
-	$data['allgroups'] = $this->group_model->get_allgroups();
+	//get the list of the batches
+	$data['allbatches'] = $this->batch_model->get_allbatches();
 	
 	$data['allcenters'] = $this->centers_model->get_allcenters();
 	$data['allsubject'] = $this->subject->get_allsubject();
 	//$data['allsubject'] = $this->subject->subject_dropdown();
-	//print_r($data['allgroups']);
+	//print_r($data['allbatches']);
 	//print_r($data['allsubject']);
 	$this->load->view($this->session->userdata('web_view').'/header',$data);
 	$this->load->view($this->session->userdata('web_view').'/add_user',$data);
@@ -204,9 +204,9 @@ return;
 			//print_r($user_id);
 			$data['user'] = $this->user->get_user($user_id);
 			//print_r($data['user']);
-		$data['groups'] = $this->group_model->get_selectedGroupWise($data['user']['cid'],$data['user']['institute_id']);
-			//print_r($data['groups']);
-		$data['allgroups'] = $this->group_model->get_allgroups();
+		$data['batches'] = $this->batch_model->get_selectedBatchWise($data['user']['cid'],$data['user']['institute_id']);
+			//print_r($data['batches']);
+		$data['allbatches'] = $this->batch_model->get_allbatches();
 		$data['allcenters'] = $this->centers_model->get_allcenters();
 		$data['allsubject'] = $this->subject->get_allsubject(); 
 		$data['centerNameSelected'] = ""; 
@@ -227,7 +227,7 @@ return;
 		$user_id=$logged_in['id'];
 		$institute_id =$this->session->userdata('institute_id');
 		$data['user'] = $this->user->get_user($user_id,$institute_id);
-		$data['allgroups'] = $this->group_model->get_allgroups();
+		$data['allbatches'] = $this->batch_model->get_allbatches();
 		$data['user_id'] = $user_id;
 		$data['resultstatus'] = $resultstatus;
 		$data['su']=$logged_in['su'];

@@ -16,7 +16,7 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']=="1"){
 ?>
-Live Classroom is a place where you can post live content  (text, image or any other attachments) to users of selected groups.<br>
+Live Classroom is a place where you can post live content  (text, image or any other attachments) to users of selected batches.<br>
 Users can ask any question by posting comments and you (Admin) have power to publish, delete and answer that comments.
 Closing any class will disable new content or comments.
 

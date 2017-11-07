@@ -233,7 +233,7 @@ $('#subjectName').on('change', function() {
   console.log(1);
   var subjectValue = $("#subjectName").val();
   var centerValue = $("#centerName").val();
-  var url = "<?php echo site_url('user_data/selected_group');?>";
+  var url = "<?php echo site_url('user_data/selected_batch');?>";
   var url = url+"/"+subjectValue+"/"+centerValue;
   console.log(url);
 /*
@@ -268,7 +268,7 @@ $.ajax({
 		//options = "<option> Please select Batch </option>";  
        for(var i=0,j=1;i<data.length; i++,j++)
        {
-        options += "  <input type='checkbox' name='assigned_groups[]' value='"+data[i].id+"'>"+data[i].name;
+        options += "  <input type='checkbox' name='assigned_batches[]' value='"+data[i].id+"'>"+data[i].name;
 		if (j%5 == 0)
 		{
 			options +=" </br> ";

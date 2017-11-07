@@ -92,8 +92,8 @@ function subject_list($limit)
 		$this->db->select("question_subject.cid, subject_name");  
 		//$this->db->distinct("subject_name");
 		$this->db->distinct();
-		$this->db->join("user_group","user_group.cid = question_subject.cid");
-		$this->db->where("user_group.institute_id",$institute_id);
+		$this->db->join("user_batch","user_batch.cid = question_subject.cid");
+		$this->db->where("user_batch.institute_id",$institute_id);
 		$this->db->group_by("question_subject.subject_name");
 		
 		$query = $this->db->get("question_subject"); */
@@ -102,7 +102,7 @@ function subject_list($limit)
 		//$this->db->where("question_subject.institute_id",$institute_id);
 		$query = $this->db->get("question_subject");
 		 
-		//$query = $this -> db -> query("SELECT DISTINCT question_subject.* FROM question_subject INNER JOIN user_group ON user_group.cid = question_subject.cid where user_group.institute_id ='$institute_id'");
+		//$query = $this -> db -> query("SELECT DISTINCT question_subject.* FROM question_subject INNER JOIN user_batch ON user_batch.cid = question_subject.cid where user_batch.institute_id ='$institute_id'");
 		//$xxx=$query->result(); 
 		
 	

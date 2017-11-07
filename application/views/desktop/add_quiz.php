@@ -44,13 +44,13 @@ if($resultstatus){ echo "<div id='result'>".$resultstatus."</div>"; }
 	</td>
 </tr>	
 <tr>
-	<td valign="top">Assign to Groups</td>
+	<td valign="top">Assign to Batches</td>
 	<td>
 		<?php
-		$group_counter = 1; 
-		foreach($groups as $key => $group){ ?>
-			<?php echo $group['group_name']; ?><input type="checkbox" name="assigned_groups[]" value="<?php echo $group['gid']; ?>"> &nbsp;&nbsp;
-		<?php if($group_counter%5 == 0){ echo "</br>"; } $group_counter++; }  ?>
+		$batch_counter = 1; 
+		foreach($batches as $key => $batch){ ?>
+			<?php echo $batch['batch_name']; ?><input type="checkbox" name="assigned_batches[]" value="<?php echo $batch['gid']; ?>"> &nbsp;&nbsp;
+		<?php if($batch_counter%5 == 0){ echo "</br>"; } $batch_counter++; }  ?>
 	</td>
 </tr>	
 <tr>

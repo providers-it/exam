@@ -3,8 +3,8 @@
 <?php 
 if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; }
  ?> 
-<form method="post" action="<?php echo site_url('group/update_group/'.$gid);?>">
-<a href="<?php echo site_url('group');?>"   class="btn btn-danger">Back</a>
+<form method="post" action="<?php echo site_url('batch/update_batch/'.$gid);?>">
+<a href="<?php echo site_url('batch');?>"   class="btn btn-danger">Back</a>
 <div class="row" style="margin-top:10px;">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -16,8 +16,8 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
                                 <div class="col-lg-6">
                                    
                                         <div class="form-group">
-                                            <label>Group Name</label>
-		                                         <input type='text'  class="form-control"  name='groupname'  value="<?php echo $group['group_name']; ?>">
+                                            <label>Batch Name</label>
+		                                         <input type='text'  class="form-control"  name='batchname'  value="<?php echo $batch['batch_name']; ?>">
 
                                          </div>
 										 

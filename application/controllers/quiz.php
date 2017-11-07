@@ -6,7 +6,7 @@ class Quiz extends CI_Controller {
  {
    parent::__construct();
    $this->load->model('quiz_model','',TRUE);
-   $this->load->model('group_model','',TRUE);
+   $this->load->model('batch_model','',TRUE);
    $this->load->model('centers_model','',TRUE);
    if(!$this->session->userdata('logged_in'))
    {
@@ -58,7 +58,7 @@ return;
  	$this->load->model('subject','',TRUE);
   	$data['subject'] = $this->subject->subject_dropdown();
 	$this->load->model('difficult_level','',TRUE);
-	$data['groups'] = $this->group_model->get_allgroups();
+	$data['batches'] = $this->batch_model->get_allbatches();
 	$data['allsubject'] = $this->subject->get_allsubject();
 	$data['allcenters'] = $this->centers_model->get_allcenters();
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
@@ -86,14 +86,14 @@ return;
  	$this->load->model('subject','',TRUE);
 	$this->load->model('centers_model','',TRUE);
 	$this->load->model('user','',TRUE);
-	$this->load->model('group_model','',TRUE);
+	$this->load->model('batch_model','',TRUE);
   	$data['subject'] = $this->subject->subject_dropdown();
 	$this->load->model('difficult_level','',TRUE);
 	$data['user'] = $this->user->get_user($user_id); 
 	$data['quiz']=$this->quiz_model->get_quiz_data($id);
-	$data['groups'] = $this->group_model->get_selectedGroupWise($data['quiz']['cid'],$data['quiz']['institute_id']);
-	//print_r($data['groups']);
-	$data['allgroups'] = $this->group_model->get_allgroups();
+	$data['batches'] = $this->batch_model->get_selectedBatchWise($data['quiz']['cid'],$data['quiz']['institute_id']);
+	//print_r($data['batches']);
+	$data['allbatches'] = $this->batch_model->get_allbatches();
 		$data['allcenters'] = $this->centers_model->get_allcenters();
 		$data['allsubject'] = $this->subject->get_allsubject(); 
 		$data['allsubjectarray'] = $this->subject->get_allsubjectarray(); 
@@ -107,7 +107,7 @@ return;
 	}	
 	$data['result'] = $this->quiz_model->quiz_detail($id);
 	
-		$data['assigned_gids'] = $this->quiz_model->assigned_groups($id);
+		$data['assigned_gids'] = $this->quiz_model->assigned_batches($id);
 if($data['result']->qselect=="1"){
 	$data['assigned_questions'] = $this->quiz_model->assigned_questions($id);
 	}else{

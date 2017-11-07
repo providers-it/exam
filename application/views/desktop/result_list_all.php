@@ -13,9 +13,9 @@ if($logged_in['su']=="1"){
 <option value="pdf">PDF</option>
 <option value="csv">CSV</option>
 </select> <select name="gid"   class="form-control"   style="width:150px;float:left;margin-left:10px;"  >
-<option value="0">Select Group</option>
-<?php foreach($group_list as $value){ ?>
-<option value="<?php echo $value['gid'];?>"><?php echo $value['group_name'];?></option>
+<option value="0">Select Batch</option>
+<?php foreach($batch_list as $value){ ?>
+<option value="<?php echo $value['gid'];?>"><?php echo $value['batch_name'];?></option>
 <?php } ?>
 </select>  &nbsp;
  <select name="quid"  class="form-control"   style="width:150px;float:left;margin-left:10px;"  >

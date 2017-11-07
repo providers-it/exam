@@ -53,7 +53,7 @@ return;
 
 
 //done
-// add new group form
+// add new batch form
 function add_new(){
 $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){

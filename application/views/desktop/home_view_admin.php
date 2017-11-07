@@ -83,10 +83,10 @@
       google.load("visualization", "1", {packages:["columnchart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
-        var data = google.visualization.arrayToDataTable(<?php echo json_encode($user_group);?>);
+        var data = google.visualization.arrayToDataTable(<?php echo json_encode($user_batch);?>);
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, {width: 400, height: 240, is3D: true, colors:[{color:'#261887', darker:'#1a0989'}], title: 'Users registered in groups'});
+        chart.draw(data, {width: 400, height: 240, is3D: true, colors:[{color:'#261887', darker:'#1a0989'}], title: 'Users registered in batches'});
       }
     </script>
 	

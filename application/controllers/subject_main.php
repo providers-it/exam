@@ -46,7 +46,7 @@ function add_new(){
 	$this->load->view($this->session->userdata('web_view').'/footer',$data);
 	}
 
-// insert group into database
+// insert batch into database
 function insert_subject(){
 	//echo "<pre>"; print_r($_POST);
 	// form validation rules

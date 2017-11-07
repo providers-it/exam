@@ -37,7 +37,7 @@ class Home extends CI_Controller {
      	$data['num_users'] = $this->user->num_users();
      	$data['num_qbank'] = $this->user->num_qbank();
      	$data['num_result'] = $this->user->num_result();
-     	$data['user_group'] = $this->user->user_by_group();
+     	$data['user_batch'] = $this->user->user_by_batch();
      $result = $this->result_model->user_last_ten_results();
      $value=array();
      $value[]=array('User name','Percentage (%)');

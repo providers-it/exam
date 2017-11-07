@@ -46,13 +46,13 @@ function get_center($gid){
 	// update center detail
  	function update_center($gid){
  		$centername = $_POST['centername'];
- 		$group_detail = array(
+ 		$batch_detail = array(
 	 		'organization_name' => $centername,
 	 		);
 	 	//$institute_id = $this->session->userdata('institute_id');
  		$this->db->where('su_institute_id',$gid);
 	 	//$this->db->where('gid', $gid);
- 		$this->db->update('institute_data',$group_detail);
+ 		$this->db->update('institute_data',$batch_detail);
  		return "Center updated";
  		}
  	//end of edit	
