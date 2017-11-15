@@ -115,8 +115,12 @@ if($this->config->item('webcam_plugin')){
 <br><br>
 Add questions
 <br><br>
-<div class="subject_box" id="qautobtn" style='background:#2f72b7;color:#ffffff;' onClick="changetabqselection('qauto','qman','1');"><a class="tooltip" href="javascript:changetabqselection('qauto','qman','1');" id="qautobtna" style="color:#ffffff;">Automatically <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> System select questions randomly</strong><br />You just need to define subject, level and number of questions you want in the quiz. </span></a></div>
-<div class="subject_box"  id="qmanbtn" onClick="changetabqselection('qman','qauto','0');"><a class="tooltip" href="javascript:changetabqselection('qman','qauto','0');" id="qmanbtna" style="color:#212121;">Manually <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> Select questions manually</strong><br />You have to select questions one by one from question bank. </span></a></div>
+<div class="subject_box" id="qautobtn" style='background:#2f72b7;color:#ffffff;' onClick="changetabqselection('qauto','qman','1');">
+    <a class="tooltip" href="javascript:changetabqselection('qauto','qman','1');" id="qautobtna" style="color:#ffffff;">Automatically <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> System select questions randomly</strong><br />You just need to define subject, level and number of questions you want in the quiz. </span></a></div>
+<div class="subject_box"  id="qmanbtn" onClick="changetabqselection('qman','qauto','0');">
+    <!--  -->
+    <a class="tooltip" href="javascript:changetabqselection('qman','qauto','0');" id="qmanbtna" style="color:#212121;">Manually <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> Select questions manually</strong><br />You have to select questions one by one from question bank. </span></a>
+</div>
 <div style="clear:both;"></div>
 <div id="qauto"><table id="formdata">
 <tr>

@@ -156,7 +156,7 @@ if($this->config->item('webcam_plugin')){
 
 Add questions
 <br><br>
-<div class="subject_box"  id="qmanbtn" onClick="changetabqselection('qman','qauto','0');" style="height:25px;" ><a class="tooltip" href="javascript:	('qman','qauto','0');" id="qmanbtna" style="color:#212121;opacity:1;">Manually <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> Select questions manually</strong><br />You have to select questions one by one from question bank. </span></a></div>
+<div class="subject_box"  id="qmanbtn" onClick="changetabqselection('qman','qauto','0');" style="height:25px;" ><a class="tooltip" href="javascript:changetabqselection('qman','qauto','0');" id="qmanbtna" style="color:#212121;opacity:1;">Manually <span> <img class="callout" src="<?php echo base_url();?>images/callout_black.gif" /> <strong> Select questions manually</strong><br />You have to select questions one by one from question bank. </span></a></div>
 <div style="clear:both;"></div>
 <br><br>
 <div class="subject_box" id="qautobtn" style='background:#2f72b7;color:#ffffff;height:25px;' onClick="changetabqselection('qauto','qman','1');">
