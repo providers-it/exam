@@ -179,7 +179,7 @@ Add questions
  
 </div>
 <div id="qman" style="display:none;visibility:hidden;">
-<h1> Click on 'Submit Quiz' button and you will go to question selection module.</h1>
+<h1> Click on 'Add questions' button and you will go to question selection module.</h1>
 </div>
 <br>
 <table id="formdata">
@@ -188,7 +188,8 @@ Add questions
 <td valign="top">
 <input type="hidden" value="1" name="qselect" id="qselect">
  
- <input id="quiz_submit" type="submit" value="Submit Quiz" name="submit_quiz" class="btn btn-default"> 
+ <!--<input id="quiz_submit" type="submit" value="Submit Quiz" name="submit_quiz" class="btn btn-default"> -->
+ <input id="quiz_add" type="submit" value="Add questions" name="quiz_add" class="btn btn-default"> 
 </td></tr>
 </table>
 </div>

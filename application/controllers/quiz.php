@@ -62,10 +62,14 @@ return;
 	$data['allsubject'] = $this->subject->get_allsubject();
 	$data['allcenters'] = $this->centers_model->get_allcenters();
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
-	if($this->input->post('submit_quiz')){
+	$data['scroll']=0;
+	$redirect_track = 0;
+	if($this->input->post('quiz_add')){
 	$data['resultstatus'] = $this->quiz_model->add_quiz();
 	$qselect=$this->input->post('qselect');
-	redirect('quiz/edit_quiz/'.$data['resultstatus'].'/'.$qselect);
+	$data['scroll']=1;
+	$redirect_track = 1;
+	redirect('quiz/edit_quiz/'.$data['resultstatus'].'/'.$qselect.'/'.$redirect_track);
 	}	
 	$data['title']="Add new quiz";
    $this->load->view($this->session->userdata('web_view').'/header',$data);
@@ -75,7 +79,7 @@ return;
  }
 
 
- function edit_quiz($id,$qselect='1')
+ function edit_quiz($id,$qselect='1',$redirect_track ='0')
  {
  $logged_in=$this->session->userdata('logged_in');
 if($logged_in['su']!="1"){
@@ -87,6 +91,7 @@ return;
 	$this->load->model('centers_model','',TRUE);
 	$this->load->model('user','',TRUE);
 	$this->load->model('batch_model','',TRUE);
+	$data['redirect_track'] = $redirect_track;
   	$data['subject'] = $this->subject->subject_dropdown();
 	$this->load->model('difficult_level','',TRUE);
 	$data['user'] = $this->user->get_user($user_id); 
@@ -99,12 +104,25 @@ return;
 		$data['allsubjectarray'] = $this->subject->get_allsubjectarray(); 
 		$data['centerNameSelected'] = ""; 
 		$data['centerIDSelected'] = ""; 
-	
+	$data['scroll']=0;
+	if($redirect_track == 1)
+	{
+		$data['scroll']=1;
+		$data['resultstatus'] ="Questions added successfully.";
+	}
   	$data['difficult_level'] = $this->difficult_level->level_dropdown();
-	if($this->input->post('submit_quiz')){
+	if($this->input->post('quiz_add')){
 	$data['resultstatus'] = $this->quiz_model->edit_quiz($id);
+	$data['scroll']=1;
+	 
+	}	
+	if($this->input->post('submit_quiz')){
+	
+	$data['scroll']=1;
+	redirect('quiz');
 	 //print_r($data['resultstatus']);
 	}	
+	
 	$data['result'] = $this->quiz_model->quiz_detail($id);
 	
 		$data['assigned_gids'] = $this->quiz_model->assigned_batches($id);
@@ -114,8 +132,10 @@ if($data['result']->qselect=="1"){
 	$data['assigned_questions'] = $this->quiz_model->assigned_questions_manually($id);
 	
 	}
-	$data['qselect']=$qselect;
-	$data['title']="Edit quiz";
+	$data['qselect2']=$data['quiz']['qselect'];
+     $data['qselect']=$qselect;
+	 $data['title']="Edit quiz";
+	
    	$this->load->view($this->session->userdata('web_view').'/header',$data);
    
    	$this->load->view($this->session->userdata('web_view').'/edit_quiz',$data);

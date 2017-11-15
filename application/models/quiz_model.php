@@ -238,7 +238,7 @@ $this->db->insert('essay_qsn', $insert_data);
 			$this->db->insert('quiz_qids',$insert_data);
 			}
 			}
-			return "Quiz added successfully";
+			return "Questions added successfully.";
 			}else{
 			return "Unable to add quiz";
 			}
@@ -1070,7 +1070,7 @@ $oid=implode(",",$oids);
 			}
 	}
 			delete_cookie("rid");
-			return "Quiz submitted successfully.";
+			return "Questions added successfully.";
 			
 			}else{
 			 

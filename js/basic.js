@@ -240,7 +240,9 @@ var formData = {search_type:search_type,search:searchval};
 function closeqselection(quid){
 		document.getElementById('qbank').style.display="none";
 		document.getElementById('qbank').style.visibility="hidden";
+
 		window.location=base_url+"index.php/quiz/edit_quiz/"+quid;
+
 }
 
 function addquestion(quid,qid){

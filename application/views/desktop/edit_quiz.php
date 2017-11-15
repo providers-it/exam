@@ -5,9 +5,7 @@ window.location="<?php echo site_url();?>qbank/index/0/"+cid;
 	</script>
 	<script type="text/javascript" src="<?php echo base_url();?>/js/basic.js"></script>
 
-<?php 
-if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; }
- ?> 
+
  
 <form method="post" action="<?php echo site_url('quiz/edit_quiz/'.$result->quid);?>">
 
@@ -97,8 +95,8 @@ if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div
 		<input type="hidden" name="test_charges" value="0"> 
                                          </div>-->
 
-										 
-	                                       <div class="form-group">
+
+                                    <div class="form-group">
                                             <label>Allow to View Answer </label> &nbsp;&nbsp;
 		                                          		<input type='radio' name='view_answer' value='1'  <?php if($result->view_answer == "1"){ echo "checked";}?> >Yes &nbsp;&nbsp;&nbsp;
 														<input type='radio' name='view_answer' value='0'  <?php if($result->view_answer == "0"){ echo "checked";}?>  >No  
@@ -207,12 +205,22 @@ foreach($assigned_questions as $key => $val){
 <?php
 }
 ?>
- 
+<?php 
+if($resultstatus){ echo "<div class='alert alert-success'>".$resultstatus."</div>"; }
+ ?> 
+To add more questions, select subject, level & no. and click 'Add questions'. After completion, click 'Submit quiz'. 
+ <!--<?php 
+if($redirect_track == '0'){ echo "To add more questions, select subject, level & no. and click 'Add questions'. After completion, click 'Submit quiz'. "; }
+ ?>-->
+ <a name="scrollHere"></a>
  <div class="form-group">
 <input type="hidden" value="<?php echo $result->qselect;?>" name="qselect" id="qselect">
  <input type="submit" value="Submit Quiz" name="submit_quiz" class="btn btn-default">   
 
-
+<?php if ($result->qselect == "1")
+{ ?>
+ <input type="submit" value="Add questions" name="quiz_add" class="btn btn-default"> 
+<?php } ?>
 
 
 </div> 
@@ -224,7 +232,6 @@ foreach($assigned_questions as $key => $val){
 				</div>
 </div>
  </form>
-
 
 
 
@@ -340,14 +347,7 @@ if($key==(count($assigned_questions)-1)){
 
 
 
-<br><br>
-Note: Arrange question subject wise. you can use up or down icon to arrange it.
-<br>
-Eg. All questions of subject A should be togather then subject B etc..<br><br>
-<b>Right Method</b><br>
-1-5 question from subject A then 6-10 questions from subject B<br>
-<br><b>Wrong Method</b></br>
-1-2 questions from subject A then 2-6 from subject B then 7-10 again subject A<br> 
+
 <?php
 }
 ?>
@@ -379,6 +379,21 @@ questionselection('<?php echo $result->quid;?>','<?php echo $result->quiz_name;?
 <?php
 }
 ?>
+
+
+<script>
+function scrollWin() {
+   // window.scrollTo(0,300);
+	window.location.hash = '#scrollHere';
+}
+</script>
+<?php
+if($scroll == 1 || $scroll2 == 1)
+{
+	?><script>
+window.onload=scrollWin();
+</script> <?php } ?>
+
 
 <script type="text/javascript">
  
@@ -478,69 +493,9 @@ $.ajax({
     }
 });
 
-/*$('#centerName').on('load', function() {
-  console.log(1);
-  var selectedValue = $("#centerName").val();
-  var url = "<?php echo site_url('user_data/selected_subject');?>";
-  var url = url+"/"+selectedValue;
-  console.log(url);
-$.ajax({
-  type: "GET",
-  url: url,
-   dataType:'json',
-      success: function(data) {
-      console.log(data);
-
-          var select = $("#subjectName"), options = '';
-       select.empty();      
-		options = "<option> Please select Subject </option>";  
-       for(var i=0;i<data.length; i++)
-       {
-        options += "<option value='"+data[i].id+"'>"+ data[i].name +"</option>";              
-       }
-
-       select.append(options);
-    }
-});*/
 
 })
-//get batches 
 
-/*$('#subjectName').on('change', function() {
-  console.log(1);
-  <?php $switch = 1 ?>
-  var subjectValue = $("#subjectName").val();
-  var centerValue = $("#centerName").val();
-  var url = "<?php echo site_url('user_data/selected_batch');?>";
-  var url = url+"/"+subjectValue+"/"+centerValue;
-  console.log(url);
-$.ajax({
-  type: "GET",
-  url: url,
-   dataType:'json',
-      success: function(data) {
-      console.log(data);
-
-          var select = $("#batchName"), options = '';
-       select.empty();      
-		options = "<option> Please select Batch </option>";  
-       console.log(data);
-	   if (data)
-	   {
-		   console.log('hi');
-		   for(var i=0;i<data.length; i++)
-       {
-        options += "<option value='"+data[i].id+"'>"+ data[i].name +"</option>";              
-       }
-	   }
-	   else
-	   {
-		   options = "<option> No batch created for " + $("#subjectName option:selected").text() + " </option>"; //editing
-	   }
-       select.append(options);
-    }
-});
-}) */
 
 
 
@@ -551,25 +506,7 @@ $('#subjectName').on('change', function() {
   var url = "<?php echo site_url('user_data/selected_batch');?>";
   var url = url+"/"+subjectValue+"/"+centerValue;
   console.log(url);
-/*
-$.ajax({
-  type: "GET",
-  url: url,
-   dataType:'json',
-      success: function(data) {
-      console.log(data);
 
-          var select = $("#batchName"), options = '';
-       select.empty();      
-		options = "<option> Please select Batch </option>";  
-       for(var i=0;i<data.length; i++)
-       {
-        options += "<option value='"+data[i].id+"'>"+ data[i].name +"</option>";              
-       }
-
-       select.append(options);
-    }
-}); */
 $.ajax({
   type: "GET",
   url: url,
