@@ -99,7 +99,7 @@ foreach($result as $row){
 <td data-th="Action">
 <a href="<?php echo site_url('result/view/'.$row->rid.'/'.$row->quid);?>" class="btn btn-warning btn-xs">View</a>
 <?php
-if($logged_in['su']=="1" && $logged_in['id']=="1"){
+if($logged_in['su']=="1"){
 ?>
 <a href="javascript: if(confirm('Do you really want to delete this result?')){ window.location='<?php echo site_url('result/remove_result/'.$row->rid);?>'; }" class="btn btn-danger btn-xs">Remove</a>
 
