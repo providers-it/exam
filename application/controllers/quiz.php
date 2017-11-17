@@ -119,6 +119,7 @@ return;
 	if($this->input->post('submit_quiz')){
 	
 	$data['scroll']=1;
+        $data['resultstatus'] = $this->quiz_model->edit_quiz($id);
 	redirect('quiz');
 	 //print_r($data['resultstatus']);
 	}	
