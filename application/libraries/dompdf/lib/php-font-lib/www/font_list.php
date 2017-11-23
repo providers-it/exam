@@ -8,18 +8,18 @@
 ?><!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<?php 
+<?php
 
 $fonts = glob("../fonts/*.{ttf,TTF,otf,OTF,ttc,TTC,eot,EOT,woff,WOFF}", GLOB_BRACE);
 sort($fonts);
 
 echo "<ul>";
-foreach($fonts as $font) {
-  echo "<li><a href=\"font_info.php?fontfile=$font\" target=\"font-info\">".basename($font)."</a></li>";
+foreach ($fonts as $font) {
+    echo "<li><a href=\"font_info.php?fontfile=$font\" target=\"font-info\">" . basename($font) . "</a></li>";
 }
 echo "</ul>";
 

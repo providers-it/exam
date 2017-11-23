@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -14,28 +14,28 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://home.dev/exam/'; 
+$config['base_url'] = 'http://home.dev/exam/';
 
 /*
 | number of records per page
 */
-$config['number_of_rows']	= '30';
+$config['number_of_rows'] = '30';
 
 /*
 | enable user self-registration form. use true or false
 */
-$config['user_reg']	= true;
+$config['user_reg'] = true;
 
 /*
 | Self-registration email verification. use true or false
 */
-$config['user_veri']	= true;
+$config['user_veri'] = true;
 
 
 /*
 | Social share button of result. use true or false
 */
-$config['social_share']	= true;
+$config['social_share'] = true;
 
 
 /*
@@ -56,12 +56,11 @@ $config['photo_width'] = "200px";
 $config['photo_height'] = "200px";
 
 
-
 // enable or disable result email. use true or false
-$config['allow_result_email']=false;
+$config['allow_result_email'] = false;
 
 // email sending protocol mail or smtp
-$config['protocol']="mail";
+$config['protocol'] = "mail";
 
 /*
 | SMTP configuration to send email to user just after submitting quiz
@@ -90,38 +89,31 @@ $config['result_message'] = "Hi [last_name],\r\n \r\n  You have [result_status] 
 // email subject
 $config['result_subject'] = "Result generated for quiz [quiz_name]";
 // email send from
-$config['fromemail']="noeply@gmailll.com";
+$config['fromemail'] = "noeply@gmailll.com";
 // from name
-$config['fromname']="Administrator - Quiz Portal";
-
-
+$config['fromname'] = "Administrator - Quiz Portal";
 
 
 //******************** Payment Gateway ******************************
 // It require paid quiz plugin installed 
 
 // Enable paypal to buy credit use true or false
-$config['payment_gateway_paypal']=true;
+$config['payment_gateway_paypal'] = true;
 // paypal payment receiver email id
-$config['paypal_receiver']="";
+$config['paypal_receiver'] = "";
 // paypal buy now amount in USD , do not include dollar sign
-$config['paypal_amount']="100";
+$config['paypal_amount'] = "100";
 // number of credit will added to account
-$config['no_credit']="1000";
+$config['no_credit'] = "1000";
 
 // Enable payu (payment gateway ) to buy credit use true or false
-$config['payment_gateway_payu']=true;
+$config['payment_gateway_payu'] = true;
 // payu merchant key
-$config['payu_merchant_key']="";
+$config['payu_merchant_key'] = "";
 // payu salt
-$config['payu_salt']="";
+$config['payu_salt'] = "";
 
 // ******************** end gateway configuration **********************
-
-
-
-
-
 
 
 /*
@@ -152,7 +144,7 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'AUTO';
+$config['uri_protocol'] = 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -177,7 +169,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language'] = 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -262,11 +254,11 @@ $config['permitted_uri_chars'] = '';
 | use segment based URLs.
 |
 */
-$config['allow_get_array']		= TRUE;
+$config['allow_get_array'] = TRUE;
 $config['enable_query_strings'] = FALSE;
-$config['controller_trigger']	= 'c';
-$config['function_trigger']		= 'm';
-$config['directory_trigger']	= 'd'; // experimental not currently in use
+$config['controller_trigger'] = 'c';
+$config['function_trigger'] = 'm';
+$config['directory_trigger'] = 'd'; // experimental not currently in use
 
 /*
 |--------------------------------------------------------------------------
@@ -352,15 +344,15 @@ $config['encryption_key'] = 'psaskills';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'ci_session';
-$config['sess_expiration']		= 7200;
-$config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= FALSE;
-$config['sess_use_database']	= FALSE;
-$config['sess_table_name']		= 'ci_sessions';
-$config['sess_match_ip']		= FALSE;
-$config['sess_match_useragent']	= TRUE;
-$config['sess_time_to_update']	= 300;
+$config['sess_cookie_name'] = 'ci_session';
+$config['sess_expiration'] = 7200;
+$config['sess_expire_on_close'] = FALSE;
+$config['sess_encrypt_cookie'] = FALSE;
+$config['sess_use_database'] = FALSE;
+$config['sess_table_name'] = 'ci_sessions';
+$config['sess_match_ip'] = FALSE;
+$config['sess_match_useragent'] = TRUE;
+$config['sess_time_to_update'] = 300;
 
 /*
 |--------------------------------------------------------------------------
@@ -373,10 +365,10 @@ $config['sess_time_to_update']	= 300;
 | 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
 |
 */
-$config['cookie_prefix']	= "";
-$config['cookie_domain']	= "";
-$config['cookie_path']		= "/";
-$config['cookie_secure']	= FALSE;
+$config['cookie_prefix'] = "";
+$config['cookie_domain'] = "";
+$config['cookie_path'] = "/";
+$config['cookie_secure'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------

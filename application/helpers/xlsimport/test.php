@@ -2,84 +2,75 @@
 /**
  * XLS parsing uses php-excel-reader from http://code.google.com/p/php-excel-reader/
  */
-	header('Content-Type: text/plain');
+header('Content-Type: text/plain');
 
-	
-		$Filepath = "sample.xls";
-	
 
-	// Excel reader from http://code.google.com/p/php-excel-reader/
-	require('php-excel-reader/excel_reader2.php');
-	require('SpreadsheetReader.php');
- $allxlsdata = array();
-	date_default_timezone_set('UTC');
+$Filepath = "sample.xls";
 
-	$StartMem = memory_get_usage();
-	echo '---------------------------------'.PHP_EOL;
-	echo 'Starting memory: '.$StartMem.PHP_EOL;
-	echo '---------------------------------'.PHP_EOL;
 
-	try
-	{
-		$Spreadsheet = new SpreadsheetReader($Filepath);
-		$BaseMem = memory_get_usage();
+// Excel reader from http://code.google.com/p/php-excel-reader/
+require('php-excel-reader/excel_reader2.php');
+require('SpreadsheetReader.php');
+$allxlsdata = array();
+date_default_timezone_set('UTC');
 
-		$Sheets = $Spreadsheet -> Sheets();
+$StartMem = memory_get_usage();
+echo '---------------------------------' . PHP_EOL;
+echo 'Starting memory: ' . $StartMem . PHP_EOL;
+echo '---------------------------------' . PHP_EOL;
 
-		echo '---------------------------------'.PHP_EOL;
-		echo 'Spreadsheets:'.PHP_EOL;
-		print_r($Sheets);
-		echo '---------------------------------'.PHP_EOL;
-		echo '---------------------------------'.PHP_EOL;
+try {
+    $Spreadsheet = new SpreadsheetReader($Filepath);
+    $BaseMem = memory_get_usage();
 
-		foreach ($Sheets as $Index => $Name)
-		{
-			echo '---------------------------------'.PHP_EOL;
-			echo '*** Sheet '.$Name.' ***'.PHP_EOL;
-			echo '---------------------------------'.PHP_EOL;
+    $Sheets = $Spreadsheet->Sheets();
 
-			$Time = microtime(true);
+    echo '---------------------------------' . PHP_EOL;
+    echo 'Spreadsheets:' . PHP_EOL;
+    print_r($Sheets);
+    echo '---------------------------------' . PHP_EOL;
+    echo '---------------------------------' . PHP_EOL;
 
-			$Spreadsheet -> ChangeSheet($Index);
+    foreach ($Sheets as $Index => $Name) {
+        echo '---------------------------------' . PHP_EOL;
+        echo '*** Sheet ' . $Name . ' ***' . PHP_EOL;
+        echo '---------------------------------' . PHP_EOL;
 
-			foreach ($Spreadsheet as $Key => $Row)
-			{
-				echo $Key.': ';
-				if ($Row)
-				{
-					print_r($Row);
-					$allxlsdata[] = $Row;
-				}
-				else
-				{
-					var_dump($Row);
-				}
-				$CurrentMem = memory_get_usage();
-		
-				echo 'Memory: '.($CurrentMem - $BaseMem).' current, '.$CurrentMem.' base'.PHP_EOL;
-				echo '---------------------------------'.PHP_EOL;
-		
-				if ($Key && ($Key % 500 == 0))
-				{
-					echo '---------------------------------'.PHP_EOL;
-					echo 'Time: '.(microtime(true) - $Time);
-					echo '---------------------------------'.PHP_EOL;
-				}
-			}
-		
-			echo PHP_EOL.'---------------------------------'.PHP_EOL;
-			echo 'Time: '.(microtime(true) - $Time);
-			echo PHP_EOL;
+        $Time = microtime(true);
 
-			echo '---------------------------------'.PHP_EOL;
-			echo '*** End of sheet '.$Name.' ***'.PHP_EOL;
-			echo '---------------------------------'.PHP_EOL;
-		}
-		
-	}
-	catch (Exception $E)
-	{
-		echo $E -> getMessage();
-	}
+        $Spreadsheet->ChangeSheet($Index);
+
+        foreach ($Spreadsheet as $Key => $Row) {
+            echo $Key . ': ';
+            if ($Row) {
+                print_r($Row);
+                $allxlsdata[] = $Row;
+            } else {
+                var_dump($Row);
+            }
+            $CurrentMem = memory_get_usage();
+
+            echo 'Memory: ' . ($CurrentMem - $BaseMem) . ' current, ' . $CurrentMem . ' base' . PHP_EOL;
+            echo '---------------------------------' . PHP_EOL;
+
+            if ($Key && ($Key % 500 == 0)) {
+                echo '---------------------------------' . PHP_EOL;
+                echo 'Time: ' . (microtime(true) - $Time);
+                echo '---------------------------------' . PHP_EOL;
+            }
+        }
+
+        echo PHP_EOL . '---------------------------------' . PHP_EOL;
+        echo 'Time: ' . (microtime(true) - $Time);
+        echo PHP_EOL;
+
+        echo '---------------------------------' . PHP_EOL;
+        echo '*** End of sheet ' . $Name . ' ***' . PHP_EOL;
+        echo '---------------------------------' . PHP_EOL;
+    }
+
+} catch (Exception $E) {
+    echo $E->getMessage();
+}
 print_r($allxlsdata);
 ?>

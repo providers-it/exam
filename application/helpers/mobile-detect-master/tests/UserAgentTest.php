@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MIT License
  * ===========
@@ -180,7 +181,7 @@ class UserAgentTest extends PHPUnit_Framework_TestCase
 
         if (isset($version)) {
             foreach ($version as $condition => $assertion) {
-                $this->assertEquals($assertion, $md->version($condition), 'FAILED UA (version("'.$condition.'")): '.$userAgent);
+                $this->assertEquals($assertion, $md->version($condition), 'FAILED UA (version("' . $condition . '")): ' . $userAgent);
             }
         }
 

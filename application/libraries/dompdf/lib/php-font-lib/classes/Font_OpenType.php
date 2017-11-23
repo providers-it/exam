@@ -11,9 +11,10 @@ require_once dirname(__FILE__) . "/Font_OpenType_Table_Directory_Entry.php";
 
 /**
  * Open Type font, the same as a TrueType one.
- * 
+ *
  * @package php-font-lib
  */
-class Font_OpenType extends Font_TrueType {
-  // 
+class Font_OpenType extends Font_TrueType
+{
+    //
 }
