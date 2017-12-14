@@ -63,6 +63,18 @@ function showquestion_afterquiz(id){
 	document.getElementById(qid).style.visibility="visible";
 
 	}
+	function setSolution(solnid) {
+	var solid = "soln"+solnid;
+		if(document.getElementById(solid).style.display=="none"){
+            document.getElementById(solid).style.display="block";
+            document.getElementById(solid).style.visibility="visible";
+		}
+		else if(document.getElementById(solid).style.display=="block"){
+            document.getElementById(solid).style.display="none";
+            document.getElementById(solid).style.visibility="hidden";
+		}
+
+    }
 	
 function update_answer(oid){
 var cq=document.getElementById('current_question').value;
@@ -478,7 +490,6 @@ function add_score(qid,rid,opn_id){
 
 	
 }
-
 
 function showquestion(id,q_type){
 //alert(id);

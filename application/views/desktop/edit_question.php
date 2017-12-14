@@ -134,7 +134,23 @@ if ($resultstatus) {
                                             <?php } ?>
                                         </td>
                                     </tr>
-
+                                    <tr>
+                                        <td>&nbsp</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="form-group">
+                                                <label>Solution (Optional)</label>
+                                                <textarea name="solution"><?php echo $result['0']['solution']; ?></textarea>
+                                                <p class="help-block">
+                                                    Give a solution if applicable about how this answer is derived. <br>
+                                                    User can see solution after submitting quiz in view answer section.
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
 
                                     <tr>
                                         <td valign="top"></td>

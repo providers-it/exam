@@ -224,7 +224,7 @@ class Result extends CI_Controller
         $data['title'] = "Result";
         $data['id'] = $id;
         $data['correct_incorrect'] = explode(",", $data['result']->score_ind);
-
+        $data['sol'] = 0;
         $this->load->view($this->session->userdata('web_view') . '/header', $data);
         $this->load->view($this->session->userdata('web_view') . '/view_answer', $data);
         $this->load->view($this->session->userdata('web_view') . '/footer', $data);

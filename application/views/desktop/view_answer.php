@@ -64,6 +64,7 @@
                                 <tr>
                                     <td> <?php echo $question['question']; ?></td>
                                 </tr>
+
                                 <?php
                                 if ($question['description'] != "") {
                                     ?>
@@ -90,13 +91,43 @@
                                                                 src="<?php echo base_url(); ?>images/tick-icon.png"><?php } ?>
                                                         </td>
                                                     </tr>
+
                                                 </table>
                                             </td>
                                         </tr>
+
                                         <?php
-                                    }
+                                    } ?>
+
+
+
+									 <?php
+
                                 }
                                 ?>
+                                <tr>
+
+                                    <td>
+
+                                        <a href="javascript:setSolution(<?php echo $key + 1; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><div id="soln<?php echo $key + 1; ?>" style="visibility: hidden; display: none">
+                                       <?php
+                                       if($question['solution']!="") {
+                                           echo $question['solution'];
+                                       }
+                                       else{
+                                           echo "No solution given";
+                                       }?> </div>
+                                    </td>
+                                </tr>
+
+                                </td></tr>
+
+
                                 <tr>
                                     <td>
                                         <?php
@@ -116,12 +147,31 @@
                                             <?php
                                         }
                                         ?></td>
+
                                 </tr>
 
                             </table>
+							<div class="showsolution form-group" id="showsolution1" style="display:none">
+<br>
+<b>Solution:</b>
+
+<?php 
+	if($question['question'] != "")
+	{
+		echo $question['question'];
+	}
+	else
+	{
+		echo "Not available";
+	}
+	 ?>
+		
+</div>
 
                             <?php
-                        } else if ($question['q_type'] == "1") { ?>
+                        }
+
+                        else if ($question['q_type'] == "1") { ?>
 
 
                             <table id="ques<?php echo $key; ?>" class="<?php if ($key == '0') {
@@ -512,10 +562,14 @@
                             <?php
                         }
 
+?>
 
+<?php
 //end for each
                     }
-                    ?>
+					?>
+					
+                    
                     <input type="hidden" name="noq" id="noq" value="<?php echo $key; ?>">
 
 
@@ -544,7 +598,7 @@ $oidss = explode(",", $result->oids);
         }
         ?>
         <div class="count_btn"
-             onClick="showquestion_afterquiz('<?php echo $key; ?>');" <?php if ($correct_incorrect[$key] >= "0.1") { ?> style="background:#267B02;"  <?php } else if ($correct_incorrect[$key] <= '0' && $oidss[$key] != 0) {
+                 onClick="showquestion_afterquiz('<?php echo $key; ?>');" <?php if ($correct_incorrect[$key] >= "0.1") { ?> style="background:#267B02;"  <?php } else if ($correct_incorrect[$key] <= '0' && $oidss[$key] != 0) {
             if (!in_array($key, $short_ans_pos_not_attempted)) { ?>style="background:#D03800;"    <?php }
         } ?> ><?php echo $key + 1; ?></div>
         <?php

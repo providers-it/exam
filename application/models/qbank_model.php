@@ -88,7 +88,8 @@ Class qbank_model extends CI_Model
             'did' => $this->input->post('did'),
             'question' => $this->input->post('question'),
             'qshuffle' => $this->input->post('shuffle'),
-            'description' => $this->input->post('description')
+            'description' => $this->input->post('description'),
+            'solution' => $this->input->post('solution')
 
         );
 
@@ -153,6 +154,9 @@ Class qbank_model extends CI_Model
                 $description = str_replace('"', '&#34;', $singlequestion['2']);
                 $description = str_replace("'", "&#39;", $description);
                 $description = str_replace("\n", "<br>", $description);
+                $solution = str_replace('"', '&#34;', $singlequestion['9']);
+                $solution = str_replace("'", "&#39;", $solution);
+                $solution = str_replace("\n", "<br>", $solution);
                 $ques_type = $singlequestion['0'];
                 $q_shuffle = $singlequestion['4'];
 
@@ -161,6 +165,7 @@ Class qbank_model extends CI_Model
                     'did' => $questiondid,
                     'question' => $question,
                     'description' => $description,
+                    'solution' => $solution,
                     'qshuffle' => $q_shuffle,
                     'q_type' => $ques_type
 
@@ -359,6 +364,7 @@ Class qbank_model extends CI_Model
             'did' => $this->input->post('did'),
             'question' => $this->input->post('question'),
             'description' => $this->input->post('description'),
+            'solution' =>  $this->input->post('solution'),
             'qshuffle' => $this->input->post('shuffle')
         );
         //$institute_id = $this->session->userdata('institute_id');
