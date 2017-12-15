@@ -109,12 +109,12 @@
 
                                     <td>
 
-                                        <a href="javascript:setSolution(<?php echo $key + 1; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
+                                        <a href="javascript:setSolution(<?php echo $key; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
                                     </td>
                                 </tr>
                                 <tr>
 
-                                    <td><div id="soln<?php echo $key + 1; ?>" style="visibility: hidden; display: none">
+                                    <td><div id="soln<?php echo $key; ?>" style="visibility: hidden; display: none">
                                        <?php
                                        if($question['solution']!="") {
                                            echo $question['solution'];
@@ -125,7 +125,7 @@
                                     </td>
                                 </tr>
 
-                                </td></tr>
+
 
 
                                 <tr>
@@ -221,6 +221,25 @@
                                 }
                                 ?>
                                 <tr>
+
+                                    <td>
+
+                                        <a href="javascript:setSolution(<?php echo $key; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><div id="soln<?php echo $key; ?>" style="visibility: hidden; display: none">
+                                            <?php
+                                            if($question['solution']!="") {
+                                                echo $question['solution'];
+                                            }
+                                            else{
+                                                echo "No solution given";
+                                            }?> </div>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>
                                         <?php
                                         if ($key >= "1") {
@@ -293,6 +312,25 @@
                                 }
                                 $fill += 1;
                                 ?>
+                                <tr>
+
+                                    <td>
+
+                                        <a href="javascript:setSolution(<?php echo $key; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><div id="soln<?php echo $key; ?>" style="visibility: hidden; display: none">
+                                            <?php
+                                            if($question['solution']!="") {
+                                                echo $question['solution'];
+                                            }
+                                            else{
+                                                echo "No solution given";
+                                            }?> </div>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <?php
@@ -375,6 +413,25 @@
 
                                 ?>
                                 <tr>
+
+                                    <td>
+
+                                        <a href="javascript:setSolution(<?php echo $key; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><div id="soln<?php echo $key; ?>" style="visibility: hidden; display: none">
+                                            <?php
+                                            if($question['solution']!="") {
+                                                echo $question['solution'];
+                                            }
+                                            else{
+                                                echo "No solution given";
+                                            }?> </div>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>
                                         <?php
                                         if ($key >= "1") {
@@ -450,6 +507,25 @@
                                             }
                                         }
                                         ?>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td>
+
+                                        <a href="javascript:setSolution(<?php echo $key; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><div id="soln<?php echo $key; ?>" style="visibility: hidden; display: none">
+                                            <?php
+                                            if($question['solution']!="") {
+                                                echo $question['solution'];
+                                            }
+                                            else{
+                                                echo "No solution given";
+                                            }?> </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -537,6 +613,25 @@
                                 <?php
                                 $match_ans += 1;
                                 ?>
+                                <tr>
+
+                                    <td>
+
+                                        <a href="javascript:setSolution(<?php echo $key; ?>);" class="btn btn-warning" style="width: 150px"><?php echo "Show/Hide Solution"; ?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td><div id="soln<?php echo $key; ?>" style="visibility: hidden; display: none">
+                                            <?php
+                                            if($question['solution']!="") {
+                                                echo $question['solution'];
+                                            }
+                                            else{
+                                                echo "No solution given";
+                                            }?> </div>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <?php

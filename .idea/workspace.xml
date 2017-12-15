@@ -4,7 +4,7 @@
     <list default="true" id="699cf73a-cfe4-4a5d-ab67-42bb17af7109" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xls/sample.xls" afterPath="$PROJECT_DIR$/xls/sample.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/qbank_model.php" afterPath="$PROJECT_DIR$/application/models/qbank_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/desktop/view_answer.php" afterPath="$PROJECT_DIR$/application/views/desktop/view_answer.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,17 +16,47 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="qbank_model.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="qbank_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/qbank_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="289" column="0" lean-forward="true" selection-start-line="289" selection-start-column="0" selection-end-line="289" selection-end-column="0" />
+            <state relative-caret-position="2088">
+              <caret line="287" column="42" lean-forward="true" selection-start-line="287" selection-start-column="42" selection-end-line="287" selection-end-column="42" />
               <folding>
-                <marker date="1513318910747" expanded="true" signature="961:1225" ph="select qbank... qbank" />
-                <marker date="1513318910747" expanded="true" signature="1290:1520" ph="select qbank... qbank" />
-                <marker date="1513318910747" expanded="true" signature="17240:17342" ph="SELECT * FRO... qbank" />
-                <marker date="1513318910747" expanded="true" signature="17423:17463" ph="SELECT * FRO... q_options" />
+                <marker date="1513319129580" expanded="true" signature="961:1225" ph="select qbank... qbank" />
+                <marker date="1513319129580" expanded="true" signature="1290:1520" ph="select qbank... qbank" />
+                <marker date="1513319129580" expanded="true" signature="17240:17342" ph="SELECT * FRO... qbank" />
+                <marker date="1513319129580" expanded="true" signature="17423:17463" ph="SELECT * FRO... q_options" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="question_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/desktop/question_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_answer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/desktop/view_answer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="683" column="37" lean-forward="true" selection-start-line="683" selection-start-column="37" selection-end-line="683" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basic.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/basic.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="66" column="30" lean-forward="true" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -35,7 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>quiz_verify</find>
       <find>access</find>
       <find>pre_sbtform</find>
       <find>warning_div</find>
@@ -65,6 +94,7 @@
       <find>import_question(</find>
       <find>import</find>
       <find>5</find>
+      <find>solution</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,8 +123,8 @@
         <option value="$PROJECT_DIR$/js/basic.js" />
         <option value="$PROJECT_DIR$/application/views/desktop/new_question.php" />
         <option value="$PROJECT_DIR$/application/views/desktop/edit_question.php" />
-        <option value="$PROJECT_DIR$/application/views/desktop/view_answer.php" />
         <option value="$PROJECT_DIR$/application/models/qbank_model.php" />
+        <option value="$PROJECT_DIR$/application/views/desktop/view_answer.php" />
       </list>
     </option>
   </component>
@@ -146,6 +176,20 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="exam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="exam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="js">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -355,12 +399,12 @@
       <workItem from="1512640963349" duration="1421000" />
       <workItem from="1512723065663" duration="9801000" />
       <workItem from="1513244875030" duration="7990000" />
-      <workItem from="1513315541237" duration="1532000" />
+      <workItem from="1513315541237" duration="2791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50442000" />
+    <option name="totallyTimeSpent" value="51701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="744" extended-state="6" />
@@ -457,7 +501,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/views/desktop/view_answer.php</url>
-          <line>469</line>
+          <line>545</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
@@ -797,24 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/desktop/view_answer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="111" column="71" lean-forward="false" selection-start-line="111" selection-start-column="60" selection-end-line="111" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#td#0;n#tr#4;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#5;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/desktop/question_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="188" column="38" lean-forward="false" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/qbank.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1452">
@@ -823,23 +849,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/basic.js">
+    <entry file="file://$PROJECT_DIR$/application/models/qbank_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+        <state relative-caret-position="2088">
+          <caret line="287" column="42" lean-forward="true" selection-start-line="287" selection-start-column="42" selection-end-line="287" selection-end-column="42" />
+          <folding>
+            <marker date="1513319129580" expanded="true" signature="961:1225" ph="select qbank... qbank" />
+            <marker date="1513319129580" expanded="true" signature="1290:1520" ph="select qbank... qbank" />
+            <marker date="1513319129580" expanded="true" signature="17240:17342" ph="SELECT * FRO... qbank" />
+            <marker date="1513319129580" expanded="true" signature="17423:17463" ph="SELECT * FRO... q_options" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/qbank_model.php">
+    <entry file="file://$PROJECT_DIR$/application/views/desktop/question_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="289" column="0" lean-forward="true" selection-start-line="289" selection-start-column="0" selection-end-line="289" selection-end-column="0" />
-          <folding>
-            <marker date="1513318910747" expanded="true" signature="961:1225" ph="select qbank... qbank" />
-            <marker date="1513318910747" expanded="true" signature="1290:1520" ph="select qbank... qbank" />
-            <marker date="1513318910747" expanded="true" signature="17240:17342" ph="SELECT * FRO... qbank" />
-            <marker date="1513318910747" expanded="true" signature="17423:17463" ph="SELECT * FRO... q_options" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/basic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="66" column="30" lean-forward="true" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/desktop/view_answer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="683" column="37" lean-forward="true" selection-start-line="683" selection-start-column="37" selection-end-line="683" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
