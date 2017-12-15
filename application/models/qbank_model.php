@@ -154,7 +154,7 @@ Class qbank_model extends CI_Model
                 $description = str_replace('"', '&#34;', $singlequestion['2']);
                 $description = str_replace("'", "&#39;", $description);
                 $description = str_replace("\n", "<br>", $description);
-                $solution = str_replace('"', '&#34;', $singlequestion['9']);
+                $solution = str_replace('"', '&#34;', $singlequestion['5']);
                 $solution = str_replace("'", "&#39;", $solution);
                 $solution = str_replace("\n", "<br>", $solution);
                 $ques_type = $singlequestion['0'];
@@ -173,7 +173,7 @@ Class qbank_model extends CI_Model
 
                 if ($this->db->insert('qbank', $insert_data)) {
                     $qid = $this->db->insert_id();
-                    $optionkeycounter = 5;
+                    $optionkeycounter = 6;
                     if ($ques_type == "0" || $ques_type == "") {
                         for ($i = 1; $i <= 10; $i++) {
                             if ($singlequestion[$optionkeycounter] != "") {
